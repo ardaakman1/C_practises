@@ -1,0 +1,6 @@
+from CS50 shorts
+In linear search , the idea of the algorithm is to iterate across the array from left to right, searching for  a specified element
+In psuedocode : repeat, starting at the first element:
+If the first element is what ypu are lookinf for stop else move to the next element
+WORST scenario : we have to look all of the array (O)
+Best scenario : target is the first element (omega)
