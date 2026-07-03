@@ -62,7 +62,7 @@ void process_number(node **head_ptr, node **tail_ptr, int value)
 
         if (flag == 0) {
             node *new_node = malloc(sizeof(node));
-            new_node->value = value;  // I forgot this row at first
+            new_node->value = value;  // I forgot this row at first AI
             new_node->next = NULL;
             new_node->prev = temp;
             temp->next = new_node;
@@ -128,13 +128,13 @@ void delete_node(node *temp, node **tail_ptr)
     if (temp->next->next != NULL) {
         node *copy = temp->next;
         temp->next = temp->next->next;
-        temp->next->prev = temp;  // at first I had an error since I write temp->next->next->prev
+        temp->next->prev = temp;  // at first I had an error since I write temp->next->next->prev AI
         free(copy);
         return;
     }
 
     else {
-        (*tail_ptr) = (*tail_ptr)->prev;
+        (*tail_ptr) = (*tail_ptr)->prev;  // at first I send tail (normal pointer) AI
         free(temp->next);
         temp->next = NULL;
         return;
