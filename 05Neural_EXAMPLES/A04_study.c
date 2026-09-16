@@ -31,6 +31,14 @@ int main(void) {
             w1 = w1 + (error * x1[i] * learning_rate);
             w2 = w2 + (error * x2[i] * learning_rate);
             bias = bias + (error * learning_rate);
+            if (epoch <= 10 || epoch % 50 == 0) {
+                printf("x1[%d]: %.1f | x2[%d]: %.1f |Current Prediction: %.4f\n", i, x1[i], i, x2[i], neural_prediction);
+                if (neural_prediction > 0.5)
+                printf("x1[%d]: %.1f | x2[%d]: %.1f | Result: 1\n", i, x1[i], i, x2[i]);
+                else
+                printf("x1[%d]: %.1f | x2[%d]: %.1f | Result: 0\n", i, x1[i], i, x2[i]);
+            }
+            
         }
         if (epoch <= 10 || epoch % 50 == 0) {
             printf("Epoch %3d | Weight1: %.4f | Weight2: %.4f| Bias: %.4f| Estimate: %.4f | Error: %.4f\n"
